@@ -67,7 +67,7 @@
         </tbody>
       </table>
     <script>
-        // Initial Ratings
+
     const ratings = {
       sony: 4.7,
       samsung: 3.4,
@@ -76,16 +76,11 @@
       phillips: 4.1
     }
 
-    // Total Stars
-    const starsTotal = 5;
-
-    // Run getRatings when DOM loads
     document.addEventListener('DOMContentLoaded', getRatings);
 
-    // Get ratings
     function getRatings() {
       for (let rating in ratings) {
-        const starPercentage = (ratings[rating] / starsTotal) * 100;
+        const starPercentage = (ratings[rating] / 5) * 100;
         document.querySelector(`.${rating} .stars-inner`).style.width = `${starPercentage}%`;
         document.querySelector(`.${rating} .number-rating`).innerHTML = ratings[rating];
       }
